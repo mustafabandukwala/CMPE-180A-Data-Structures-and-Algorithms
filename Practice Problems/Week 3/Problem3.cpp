@@ -1,61 +1,61 @@
 #include <iostream>
-#include <vector>
+#include <cstring>
+
 using namespace std;
 
 /*
-   Replaces each element in an array with the sum of itself and the
-   elements preceding it. 
-    
-   For example { 1, 2, 3, 4 } turns into { 1, 3, 6, 10 }
-
-   Do not declare any arrays or vectors.
-   @param a an array
-   @param n the length of the array
+  Repeats a string n times and places it into a buffer, filling
+  it up as much as possible, and providing a terminating 0. 
+  Use strncpy. 
+  @param str a string
+  @param n an integer
+  @param result a character array to hold the result
+  @param sz the size of result
 */
-
-void precedingsum(double a[], int n)
+void repeat(const char* str, int n, char result[], int sz)
 {
-   for(int i=1; i<n; i++)
-      a[i] += a[i-1];
-}
-
-void print(double v[], int size)
-{
-   cout << "{";
-   for (int i = 0; i < size; i++)
-   {
-      cout << v[i];
-      if (i < size - 1) cout << ", "; 
-   }
-   cout << "}" << endl;
+   string tempStr;
+	char repeatedString[sz];
+	int i;
+	//Concatenate str, n number of times into tempStr
+	while(n > 0)
+	{
+	   tempStr.append(str);
+	   n--;
+	}
+	//Copy the string tempStr to repeatedString
+	for(i = 0; i < sz-1; i++)
+	{
+	   repeatedString[i] = tempStr[i];
+	}
+	repeatedString[i] = '\0';
+	//Copy the string tempStr to result till size sz
+	strncpy(result, repeatedString, sz);
 }
 
 int main()
 {
-   double values[] = { 3, 1, 4, 1, 5, 9, 2, 6 };
-   precedingsum(values, sizeof(values) / sizeof(values[0]));
-   print(values, sizeof(values) / sizeof(values[0]));
-   cout << "Expected: {3, 4, 8, 9, 14, 23, 25, 31}" << endl;
-
-   double values2[] = { 1, -2, 3, -4, 5, -6 };
-   precedingsum(values2, sizeof(values2) / sizeof(values2[0]));
-   print(values2, sizeof(values2) / sizeof(values2[0]));
-   cout << "Expected: {1, -1, 2, -2, 3, -3}" << endl;
-
-   double values3[] = { 1, 2 };
-   precedingsum(values3, sizeof(values3) / sizeof(values3[0]));
-   print(values3, sizeof(values3) / sizeof(values3[0]));
-   cout << "Expected: {1, 3}" << endl;
-
-   double values4[] = { 1 };
-   precedingsum(values4, sizeof(values4) / sizeof(values4[0]));
-   print(values4, sizeof(values4) / sizeof(values4[0]));
-   cout << "Expected: {1}" << endl;
-
-   double values5[] = {};
-   precedingsum(values5, sizeof(values5) / sizeof(values5[0]));
-   print(values5, sizeof(values5) / sizeof(values5[0]));
-   cout << "Expected: {}" << endl;
+   char results[28];
+   char* r2 = results;
+   char* r1 = results + 10;
+   char* r4 = results + 21;
+   char* r3 = results + 22;
+   char* r5 = results + 26;
+   strcpy(r5, "x");
+   repeat("Hello", 2, r1, 11);
+   repeat("Goodbye", 3, r2, 10);
+   repeat("Goodbye", 3, r3, 4);
+   repeat("HI", 10, r4, 1);
+   cout << r1 << endl;
+   cout << "Expected: HelloHello" << endl;   
+   cout << r2 << endl;
+   cout << "Expected: GoodbyeGo" << endl;
+   cout << r3 << endl;
+   cout << "Expected: Goo" << endl;
+   cout << "\"" << r4 << "\"" << endl;
+   cout << "Expected: \"\"" << endl;
+   cout << "\"" << r5 << "\"" << endl;
+   cout << "Expected: \"x\"" << endl;
 
    return 0;
 }
