@@ -1,3 +1,7 @@
+----------------------------------------------------------------------------------------------------------------------------------------
+Stack.cpp
+----------------------------------------------------------------------------------------------------------------------------------------
+
 #include <stdexcept>
 #include "stack.h"
 using namespace std;
@@ -64,3 +68,80 @@ Stack::Stack(const Stack& other)
 
        return result;
    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+Stack.h
+----------------------------------------------------------------------------------------------------------------------------------------
+   
+#ifndef STACK_H
+#define STACK_H
+
+#include <string>
+
+using namespace std;
+
+struct StackFrame
+{
+   string data;
+   StackFrame *link;
+   static int frames;
+   StackFrame() { frames++; }
+   StackFrame(const StackFrame& other) { frames++; }
+   ~StackFrame() { link = nullptr; data = "666"; frames--; }
+};
+
+class Stack
+{
+ public:
+   Stack();
+   Stack(const Stack& other);
+   ~Stack();
+   void push(string s);
+   string pop();
+   bool empty() const;
+   static int stacks;
+ private:
+   StackFrame* top;
+};
+
+#endif
+
+----------------------------------------------------------------------------------------------------------------------------------------   
+Tester.cpp
+----------------------------------------------------------------------------------------------------------------------------------------
+   
+#include <iostream>
+#include "stack.h"
+
+using namespace std;
+
+void test(Stack s)
+{
+   s.pop();
+   s.pop();
+   cout << s.pop() << endl;
+   cout << "Expected: white" << endl;
+}
+
+void work()
+{
+   Stack t;
+   t.push("Its");
+   t.push("fleece");
+   t.push("was");
+   t.push("white");
+   t.push("as");
+   t.push("snow");
+   test(t);
+}
+
+int main()
+{
+   work();
+   cout << "Constructed stacks: " << Stack::stacks << endl;
+   cout << "Expected: 2" << endl;
+   cout << "Remaining frames: " << StackFrame::frames << endl;
+   cout << "Expected: 0" << endl;
+   return 0;
+}
