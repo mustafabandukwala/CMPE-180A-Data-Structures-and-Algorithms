@@ -4,6 +4,9 @@ This repository contains all the assignments and practice problems solutions
 ---
 ## Assignment
 ---
+- Assignment 1 - Path(./Assignments/Assignment 1)
+- Assignment 2 - Path(./Assignments/Assignment 2)
+---
 ## Practice Problems
 ---
 ### Week 1
