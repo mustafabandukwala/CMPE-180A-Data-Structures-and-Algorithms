@@ -1,7 +1,6 @@
 //============================================================================
 // Name        : MontyHall.cpp
 // Author      : Mustafa Bandukwala
-// Student ID  : 012555881
 // Version     : 1.0
 // Description : C++program that simulates the Monty Hall Problem to
 //               demonstrate empirically whether it’s better to stay with an
