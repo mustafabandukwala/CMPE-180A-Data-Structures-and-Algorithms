@@ -1,7 +1,6 @@
 //============================================================================
 // Name        : PiFormulas.cpp
 // Author      : Mustafa Bandukwala
-// Student ID  : 012555881
 // Version     : 1.0
 // Description : This program will compute the value of Pi using several
 //               formulas and an infinite series.
