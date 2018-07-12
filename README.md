@@ -6,6 +6,7 @@ This repository contains all the assignments and practice problems solutions
 ---
 - Assignment 1 - Path(./Assignments/Assignment 1)
 - Assignment 2 - Path(./Assignments/Assignment 2)
+- Assignment 3 - Path(./Assignments/Assignment 3)
 ---
 ## Practice Problems
 ---
