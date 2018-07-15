@@ -8,6 +8,7 @@ This repository contains all the assignments and practice problems solutions
 - Assignment 2 - Path(./Assignments/Assignment 2)
 - Assignment 3 - Path(./Assignments/Assignment 3)
 - Assignment 4 - Path(./Assignments/Assignment 4)
+- Assignment 5 - Path(./Assignments/Assignment 5)
 ---
 ## Practice Problems
 ---
