@@ -1,50 +1,42 @@
 /***************************************************************************
  * Name        : Coordinate.h
- * Author      : Mustafa Bandukwala
  * Version     : 1.0
  * Description : File which contains various functions related to Coordinate
  ***************************************************************************/
 
-#include "Coordinate.h"
+#ifndef COORDINATE_H_
+#define COORDINATE_H_
+
+#include <iostream>
+#include <string>
+using namespace std;
 
 /**
- * Maximum latitude and minimum longitude for this app's input data.
+ * A geographic coordinate.
  */
-const double Coordinate::MAX_LATITUDE  =   49.373112;
-const double Coordinate::MIN_LONGITUDE = -124.769867;
-
-// Getter for latitude
-double Coordinate::get_latitude()
+class Coordinate
 {
-	return latitude;
-}
+public:
 
-// Getter for longitude
-double Coordinate::get_longitude()
-{
-	return longitude;
-}
+	// Setter for latitude
+	void set_latitude(double);
+	// Setter for longitude
+	void set_longitude(double);
+	// Getter for latitude
+	double get_latitude();
+	// Getter for longitude
+	double get_longitude();
 
-// Setter for latitude
-void Coordinate::set_latitude(double lat)
-{
-	latitude = lat;
-}
+    // Overloaded input stream extraction operator.
+    friend istream& operator >>(istream& ins, Coordinate& coordinate);
 
-// Setter for longitude
-void Coordinate::set_longitude(double lon)
-{
-	longitude = lon;
-}
+    // Constants for this app's input data.
+    static const double MAX_LATITUDE;
+    static const double MIN_LONGITUDE;
 
-// Overload operator >>
-istream& operator >>(istream& ins, Coordinate& coordinate)
-{
-	string temp;
+private:
+    double latitude;
+    double longitude;
+};
 
-	getline(ins, temp, ',');
-	coordinate.set_latitude(std::stod(temp));
-	getline(ins, temp);
-	coordinate.set_longitude(std::stod(temp));
-	return ins;
-}
+#endif /* COORDINATE_H_ */
