@@ -13,6 +13,7 @@ This repository contains all the assignments and practice problems solutions
 - Assignment 7 - Path(./Assignments/Assignment 7)
 - Assignment 8 - Path(./Assignments/Assignment 8)
 - Assignment 9 - Path(./Assignments/Assignment 9)
+- Assignment 10 - Path(./Assignments/Assignment 10)
 ---
 ## Practice Problems
 ---
