@@ -14,7 +14,8 @@ This repository contains all the assignments and practice problems solutions
 - Assignment 8 - Path(./Assignments/Assignment 8)
 - Assignment 9 - Path(./Assignments/Assignment 9)
 - Assignment 10 - Path(./Assignments/Assignment 10)
-- Assignment 11 - Path(./Assignments/Assignment 11)
+- Assignment 11 - Path(./Assignments/Assignment 11/Part - 1)
+- Assignment 11 - Path(./Assignments/Assignment 11/Part - 2)
 ---
 ## Practice Problems
 ---
